@@ -21,7 +21,12 @@ export default function EnrollmentModal({ course, onClose }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (name === "phone") {
+      const digitsOnly = value.replace(/\D/g, "");
+      setFormData((prev) => ({ ...prev, phone: digitsOnly }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -164,6 +169,7 @@ export default function EnrollmentModal({ course, onClose }) {
                 </label>
                 <input
                   type="tel"
+                  maxLength={10}
                   name="phone"
                   required
                   placeholder="+91 9999999999"
