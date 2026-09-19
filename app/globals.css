@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #ffffff;
+  --text-navy: #02295d;
+  --accent-green: #25d462;
+  --accent-teal: #07889f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-navy);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Liquid Glass Effects */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(7, 136, 159, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(2, 41, 93, 0.08);
+}
+
+.liquid-glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(2, 41, 93, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(7, 136, 159, 0.12);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.liquid-glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(37, 212, 98, 0.4);
+  box-shadow: 0 20px 40px -12px rgba(2, 41, 93, 0.18), 0 0 20px 2px rgba(37, 212, 98, 0.15);
+}
+
+.liquid-glass-input {
+  background: rgba(248, 250, 252, 0.9);
+  border: 1.5px solid rgba(2, 41, 93, 0.15);
+  color: #02295d;
+  transition: all 0.2s ease;
+}
+
+.liquid-glass-input:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: #07889f;
+  box-shadow: 0 0 0 4px rgba(7, 136, 159, 0.15);
+}
+
+.glass-modal {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(7, 136, 159, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(2, 41, 93, 0.25);
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+@keyframes blobFloat1 {
+  0%, 100% {
+    transform: translate3d(0px, 0px, 0px) scale(1) rotate(0deg);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
+  }
+  33% {
+    transform: translate3d(70px, -50px, 0px) scale(1.18) rotate(120deg);
+    border-radius: 60% 40% 30% 70% / 50% 60% 40% 60%;
+  }
+  66% {
+    transform: translate3d(-40px, 60px, 0px) scale(0.92) rotate(240deg);
+    border-radius: 70% 30% 50% 50% / 30% 70% 50% 50%;
+  }
+}
+
+@keyframes blobFloat2 {
+  0%, 100% {
+    transform: translate3d(0px, 0px, 0px) scale(1) rotate(0deg);
+    border-radius: 60% 40% 50% 50% / 30% 60% 40% 70%;
+  }
+  40% {
+    transform: translate3d(-80px, 50px, 0px) scale(1.22) rotate(-140deg);
+    border-radius: 40% 60% 60% 40% / 60% 40% 70% 30%;
+  }
+  75% {
+    transform: translate3d(50px, -40px, 0px) scale(0.88) rotate(100deg);
+    border-radius: 50% 50% 30% 70% / 40% 70% 60% 40%;
+  }
+}
+
+@keyframes blobFloat3 {
+  0%, 100% {
+    transform: translate3d(0px, 0px, 0px) scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate3d(60px, 70px, 0px) scale(1.25);
+    opacity: 0.6;
+  }
+}
+
+/* Seamless Rising Particle Animation (Fade in at 0%, Fade out at 100%) */
+@keyframes risingParticle {
+  0% {
+    transform: translate3d(0px, 0px, 0px) scale(0.5);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.85;
+    transform: translate3d(15px, -35px, 0px) scale(1.1);
+  }
+  70% {
+    opacity: 0.85;
+    transform: translate3d(-15px, -110px, 0px) scale(0.95);
+  }
+  100% {
+    transform: translate3d(0px, -150px, 0px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.animate-blob-1 {
+  animation: blobFloat1 16s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
+.animate-blob-2 {
+  animation: blobFloat2 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
+.animate-blob-3 {
+  animation: blobFloat3 24s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
+}
+
+.animate-particle-1 {
+  animation: risingParticle 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
+}
+
+.animate-particle-2 {
+  animation: risingParticle 11s cubic-bezier(0.4, 0, 0.2, 1) infinite 2.5s;
+  will-change: transform, opacity;
+}
+
+.animate-particle-3 {
+  animation: risingParticle 14s cubic-bezier(0.4, 0, 0.2, 1) infinite 5s;
+  will-change: transform, opacity;
+}
+
+/* Gradient Text Helpers */
+.gradient-text-navy {
+  background: linear-gradient(135deg, #02295d 0%, #07889f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-accent {
+  background: linear-gradient(135deg, #07889f 0%, #25d462 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #07889f;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #02295d;
+}
