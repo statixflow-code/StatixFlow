@@ -43,7 +43,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-lg sm:text-xl text-[#02295d]/80 font-normal leading-relaxed max-w-2xl mx-auto">
-            Accelerate your career with industry-tailored courses, hands-on live labs, and direct referral support for top tech roles.
+            Accelerate your career with industry tailored <span className="text-[#02295d] font-extrabold">Online Courses</span>, hands-on live labs, and direct referral support for top tech roles.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -90,7 +90,7 @@ export default function ContactSection() {
                 <h4 className="font-bold text-[#02295d] text-base">Call Us</h4>
                 
                 <p className="text-sm font-semibold text-[#02295d] mt-1">
-                 Kalyan Rajput +91 98606 90498
+                 Kalyan Sir +91 98606 90498
                 </p>
                  <p className="text-sm font-semibold text-[#02295d] mt-1">
                Sanchit Mohite +91 70287 00587
